@@ -1,0 +1,7 @@
+PING www.trello.com.br (104.21.64.117): 56 data bytes
+64 bytes from 104.21.64.117: icmp_seq=0 ttl=53 time=39.355 ms
+64 bytes from 104.21.64.117: icmp_seq=1 ttl=53 time=45.658 ms
+
+--- www.trello.com.br ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 39.355/42.507/45.658/3.151 ms
