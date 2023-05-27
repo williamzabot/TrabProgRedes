@@ -12,20 +12,19 @@ def menu():
         qtd = int(input("Digite a quantidade de pacotes que deseja: "))
         qtdPackages = verifyPlatform(str(qtd))
         command = "ping " + qtdPackages + url + " > " + file
-        os.system(command)
-        print("-------------------------- PINGANDO - ----------------------")
-        pingInfo = getPingInfo(url, qtd)
-        print(pingInfo)
+        print(command)
+        ping = os.system(command)
+        if ping == 0:
+            print("-------------------------- PINGANDO - ----------------------")
+            pingInfo = getPingInfo(url, qtd)
+            print(pingInfo)
         choice = str(input("Deseja continuar? [S]im [N]ao ")).lower()
         if choice != "s":
             break
 
 def verifyPlatform(qtd):
-    if platform.system().lower() == "windows":
-        return "-n " + str(qtd) + " "
-    else:
-        return "-c " + str(qtd) + " "
-
+    command = "-n " if platform.system().lower() == "windows" else "-c "
+    return command + str(qtd) + " "
 
 def getPingInfo(url, qtd):
     arq = open(file)
