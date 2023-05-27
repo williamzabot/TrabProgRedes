@@ -13,8 +13,8 @@ def menu():
         qtdPackages = verifyPlatform(str(qtd))
         command = "ping " + qtdPackages + url + " > " + file
         print(command)
-        ping = os.system(command)
         print("-------------------------- PINGANDO - ----------------------")
+        ping = os.system(command)
         if ping == 0:
             pingInfo = getPingInfo(url, qtd)
             print(pingInfo)

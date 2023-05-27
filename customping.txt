@@ -1,8 +1,7 @@
-PING www.google.com (142.251.129.132): 56 data bytes
-64 bytes from 142.251.129.132: icmp_seq=0 ttl=112 time=39.225 ms
-64 bytes from 142.251.129.132: icmp_seq=1 ttl=112 time=47.675 ms
-64 bytes from 142.251.129.132: icmp_seq=2 ttl=112 time=47.386 ms
+PING star-mini.c10r.facebook.com (31.13.85.36): 56 data bytes
+64 bytes from 31.13.85.36: icmp_seq=0 ttl=51 time=39.661 ms
+64 bytes from 31.13.85.36: icmp_seq=1 ttl=51 time=40.205 ms
 
---- www.google.com ping statistics ---
-3 packets transmitted, 3 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 39.225/44.762/47.675/3.917 ms
+--- star-mini.c10r.facebook.com ping statistics ---
+2 packets transmitted, 2 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 39.661/39.933/40.205/0.272 ms
