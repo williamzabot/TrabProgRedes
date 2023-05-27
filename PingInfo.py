@@ -1,12 +1,12 @@
 class PingInfo:
-    def __init__(self, url, ip, date, currentTime, ttl, time, lostPackages):
-        self.url = url
-        self.ip = ip
-        self.date = date
-        self.currentTime = currentTime
-        self.ttl = ttl
-        self.time = time
-        self.lostPackages = lostPackages
+    def __init__(self):
+        self.url = None
+        self.ip = None
+        self.date = None
+        self.currentTime = None
+        self.ttl = None
+        self.time = None
+        self.lostPackages = None
 
     def __str__(self):
         return "Data: {}\nHorário {}\nUrl: {}\nIp: {}\nTTL: {}\nTime (média): {} ms\nPacotes perdidos: {}".format(

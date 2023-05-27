@@ -20,15 +20,6 @@ def menu():
         if choice != "s":
             break
 
-
-def getDate():
-    return date.today().strftime('%d/%m/%Y')
-
-
-def getCurrentTime():
-    return datetime.now().strftime('%H:%M')
-
-
 def verifyPlatform(qtd):
     if platform.system().lower() == "windows":
         return "-n " + str(qtd) + " "
@@ -39,29 +30,18 @@ def verifyPlatform(qtd):
 def getPingInfo(url, qtd):
     arq = open(file)
     lines = arq.readlines()
-    firstLine = lines[0]
+    firstLine = lines[0].split()
     secondLine = lines[1].split()
-    resultsLine = lines[qtd + 3]
-    ip = getIp(firstLine)
-    ttl = getPosition(secondLine, 5)
-    time = getPosition(secondLine, 6)
-    lostPackages = resultsLine.split()[6]
-    date = getDate()
-    currentTime = getCurrentTime()
-    return PingInfo(
-        url,
-        ip,
-        date,
-        currentTime,
-        ttl,
-        time,
-        lostPackages
-    )
-
-
-def getIp(line):
-    splitLine = line.split()
-    return splitLine[2].replace(":", "").replace("(", "").replace(")", "")
+    resultsLine = lines[qtd + 3].split()
+    pingInfo = PingInfo()
+    pingInfo.url = url
+    pingInfo.ip = firstLine[2].replace(":", "").replace("(", "").replace(")", "")
+    pingInfo.ttl = getPosition(secondLine, 5)
+    pingInfo.time = getPosition(secondLine, 6)
+    pingInfo.lostPackages = resultsLine[6]
+    pingInfo.date = date.today().strftime('%d/%m/%Y')
+    pingInfo.currentTime = datetime.now().strftime('%H:%M')
+    return pingInfo
 
 
 def getPosition(splitLine, position):
